@@ -207,8 +207,9 @@ namespace КП_Ип1_22_ВолковаВикторияЭдуардовна
                 return;
             }
 
-            PlaySound("C:\\Users\\Admin\\Desktop\\курсач\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\Res\\Music\\SoundEffects\\card_flip.mp3");
-
+            string relativePath = @"Res\Music\SoundEffects\card_flip.mp3"; // Относительный путь к вашему аудиофайлу
+            string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath); // Получаем полный путь
+            PlaySound(filePath);
             card.Source = null;
             cards[index].SetClicked(true);
             clickedCardAmount++;
@@ -224,8 +225,9 @@ namespace КП_Ип1_22_ВолковаВикторияЭдуардовна
                     cards[index].SetVisibility(false);
                     cards[previousCardIndex].SetVisibility(false);
 
-                    PlaySound("C:\\Users\\Admin\\Desktop\\курсач\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\Res\\Music\\SoundEffects\\correct_match.mp3");
-
+                    relativePath = @"Res\Music\SoundEffects\correct_match.mp3"; // Относительный путь к вашему аудиофайлу
+                    filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath); // Получаем полный путь
+                    PlaySound(filePath);
                     // Add bonuspoints if the player has a streak.
                     if (streak % 3 == 0)
                     {
@@ -282,7 +284,9 @@ namespace КП_Ип1_22_ВолковаВикторияЭдуардовна
                     cards[index].SetClicked(false);
                     cards[previousCardIndex].SetClicked(false);
 
-                    PlaySound("C:\\Users\\Admin\\Desktop\\курсач\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\Res\\Music\\SoundEffects\\incorrect_match.mp3");
+                    relativePath = @"Res\Music\SoundEffects\incorrect_match.mp3"; // Относительный путь к вашему аудиофайлу
+                    filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath); // Получаем полный путь
+                    PlaySound(filePath);
 
                     bonusPoints = 0;
                     streak = 1;
