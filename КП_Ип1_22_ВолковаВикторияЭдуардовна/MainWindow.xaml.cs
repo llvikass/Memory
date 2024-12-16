@@ -23,7 +23,9 @@ namespace КП_Ип1_22_ВолковаВикторияЭдуардовна
         private void PlayBackgroundMusic()
         {
             mediaPlayer = new MediaPlayer();
-            mediaPlayer.Open(new Uri("C:\\Users\\Admin\\Desktop\\курсач\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\КП_Ип1_22_ВолковаВикторияЭдуардовна\\Res\\Music\\background_music.mp3")); // Путь к вашему аудиофайлу
+            string relativePath = "Res\\Music\\background_music.mp3"; // Относительный путь к вашему аудиофайлу
+            string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath); // Получаем полный путь
+            mediaPlayer.Open(new Uri(fullPath));
             mediaPlayer.Volume = 0.3; // Уровень громкости (0.0 - 1.0)
             mediaPlayer.MediaEnded += MediaPlayer_MediaEnded; // Обработчик окончания воспроизведения
             mediaPlayer.Play();
