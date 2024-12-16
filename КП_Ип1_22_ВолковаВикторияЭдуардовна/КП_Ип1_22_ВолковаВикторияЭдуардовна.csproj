@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FBA46EA-A2D2-4844-A509-CE1B03CEBB3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>КП_Ип1_22_ВолковаВикторияЭдуардовна</RootNamespace>
+    <AssemblyName>КП_Ип1_22_ВолковаВикторияЭдуардовна</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="GameRules.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HighscoresScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Card.cs" />
+    <Compile Include="GameRules.xaml.cs">
+      <DependentUpon>GameRules.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameScreen.xaml.cs">
+      <DependentUpon>GameScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighscoresScreen.xaml.cs">
+      <DependentUpon>HighscoresScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NewGameScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MemoryGrid.cs" />
+    <Compile Include="NewGameScreen.xaml.cs">
+      <DependentUpon>NewGameScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Res\Back.png" />
+    <Resource Include="Res\icon.png" />
+    <Resource Include="Res\logo.png" />
+    <Resource Include="Res\memoryBackground.jpg" />
+    <Resource Include="Res\memoryBackground1.jpg" />
+    <Content Include="Res\Music\background_music.mp3" />
+    <Content Include="Res\Music\SoundEffects\card_flip.mp3" />
+    <Content Include="Res\Music\SoundEffects\correct_match.mp3" />
+    <Content Include="Res\Music\SoundEffects\incorrect_match.mp3" />
+    <Resource Include="Res\Palette.png" />
+    <Resource Include="Res\Rules.png" />
+    <Resource Include="Res\Theme Logo%27s\1.png" />
+    <Resource Include="Res\Theme Logo%27s\2.png" />
+    <Resource Include="Res\Theme Logo%27s\3.png" />
+    <Resource Include="Res\themes\theme_1\1.png" />
+    <Resource Include="Res\themes\theme_1\10.png" />
+    <Resource Include="Res\themes\theme_1\11.png" />
+    <Resource Include="Res\themes\theme_1\12.png" />
+    <Resource Include="Res\themes\theme_1\13.png" />
+    <Resource Include="Res\themes\theme_1\14.png" />
+    <Resource Include="Res\themes\theme_1\15.png" />
+    <Resource Include="Res\themes\theme_1\16.png" />
+    <Resource Include="Res\themes\theme_1\17.png" />
+    <Resource Include="Res\themes\theme_1\18.png" />
+    <Resource Include="Res\themes\theme_1\19.png" />
+    <Resource Include="Res\themes\theme_1\2.png" />
+    <Resource Include="Res\themes\theme_1\20.png" />
+    <Resource Include="Res\themes\theme_1\21.png" />
+    <Resource Include="Res\themes\theme_1\22.png" />
+    <Resource Include="Res\themes\theme_1\23.png" />
+    <Resource Include="Res\themes\theme_1\24.png" />
+    <Resource Include="Res\themes\theme_1\25.png" />
+    <Resource Include="Res\themes\theme_1\26.png" />
+    <Resource Include="Res\themes\theme_1\27.png" />
+    <Resource Include="Res\themes\theme_1\28.png" />
+    <Resource Include="Res\themes\theme_1\29.png" />
+    <Resource Include="Res\themes\theme_1\3.png" />
+    <Resource Include="Res\themes\theme_1\30.png" />
+    <Resource Include="Res\themes\theme_1\31.png" />
+    <Resource Include="Res\themes\theme_1\32.png" />
+    <Resource Include="Res\themes\theme_1\4.png" />
+    <Resource Include="Res\themes\theme_1\5.png" />
+    <Resource Include="Res\themes\theme_1\6.png" />
+    <Resource Include="Res\themes\theme_1\7.png" />
+    <Resource Include="Res\themes\theme_1\8.png" />
+    <Resource Include="Res\themes\theme_1\9.png" />
+    <Resource Include="Res\themes\theme_1\back.png" />
+    <Resource Include="Res\themes\theme_2\1.png" />
+    <Resource Include="Res\themes\theme_2\10.png" />
+    <Resource Include="Res\themes\theme_2\11.png" />
+    <Resource Include="Res\themes\theme_2\12.png" />
+    <Resource Include="Res\themes\theme_2\13.png" />
+    <Resource Include="Res\themes\theme_2\14.png" />
+    <Resource Include="Res\themes\theme_2\15.png" />
+    <Resource Include="Res\themes\theme_2\16.png" />
+    <Resource Include="Res\themes\theme_2\17.png" />
+    <Resource Include="Res\themes\theme_2\18.png" />
+    <Resource Include="Res\themes\theme_2\19.png" />
+    <Resource Include="Res\themes\theme_2\2.png" />
+    <Resource Include="Res\themes\theme_2\20.png" />
+    <Resource Include="Res\themes\theme_2\21.png" />
+    <Resource Include="Res\themes\theme_2\22.png" />
+    <Resource Include="Res\themes\theme_2\23.png" />
+    <Resource Include="Res\themes\theme_2\24.png" />
+    <Resource Include="Res\themes\theme_2\25.png" />
+    <Resource Include="Res\themes\theme_2\26.png" />
+    <Resource Include="Res\themes\theme_2\27.png" />
+    <Resource Include="Res\themes\theme_2\28.png" />
+    <Resource Include="Res\themes\theme_2\29.png" />
+    <Resource Include="Res\themes\theme_2\3.png" />
+    <Resource Include="Res\themes\theme_2\30.png" />
+    <Resource Include="Res\themes\theme_2\31.png" />
+    <Resource Include="Res\themes\theme_2\32.png" />
+    <Resource Include="Res\themes\theme_2\4.png" />
+    <Resource Include="Res\themes\theme_2\5.png" />
+    <Resource Include="Res\themes\theme_2\6.png" />
+    <Resource Include="Res\themes\theme_2\7.png" />
+    <Resource Include="Res\themes\theme_2\8.png" />
+    <Resource Include="Res\themes\theme_2\9.png" />
+    <Resource Include="Res\themes\theme_2\back.png" />
+    <Resource Include="Res\themes\theme_3\1.png" />
+    <Resource Include="Res\themes\theme_3\10.png" />
+    <Resource Include="Res\themes\theme_3\11.png" />
+    <Resource Include="Res\themes\theme_3\12.png" />
+    <Resource Include="Res\themes\theme_3\13.png" />
+    <Resource Include="Res\themes\theme_3\14.png" />
+    <Resource Include="Res\themes\theme_3\15.png" />
+    <Resource Include="Res\themes\theme_3\16.png" />
+    <Resource Include="Res\themes\theme_3\17.png" />
+    <Resource Include="Res\themes\theme_3\18.png" />
+    <Resource Include="Res\themes\theme_3\19.png" />
+    <Resource Include="Res\themes\theme_3\2.png" />
+    <Resource Include="Res\themes\theme_3\20.png" />
+    <Resource Include="Res\themes\theme_3\21.png" />
+    <Resource Include="Res\themes\theme_3\22.png" />
+    <Resource Include="Res\themes\theme_3\23.png" />
+    <Resource Include="Res\themes\theme_3\24.png" />
+    <Resource Include="Res\themes\theme_3\25.png" />
+    <Resource Include="Res\themes\theme_3\26.png" />
+    <Resource Include="Res\themes\theme_3\27.png" />
+    <Resource Include="Res\themes\theme_3\28.png" />
+    <Resource Include="Res\themes\theme_3\29.png" />
+    <Resource Include="Res\themes\theme_3\3.png" />
+    <Resource Include="Res\themes\theme_3\30.png" />
+    <Resource Include="Res\themes\theme_3\31.png" />
+    <Resource Include="Res\themes\theme_3\32.png" />
+    <Resource Include="Res\themes\theme_3\4.png" />
+    <Resource Include="Res\themes\theme_3\5.png" />
+    <Resource Include="Res\themes\theme_3\6.png" />
+    <Resource Include="Res\themes\theme_3\7.png" />
+    <Resource Include="Res\themes\theme_3\8.png" />
+    <Resource Include="Res\themes\theme_3\9.png" />
+    <Resource Include="Res\themes\theme_3\back.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

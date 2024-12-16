@@ -1,0 +1,163 @@
+﻿<Page x:Class="КП_Ип1_22_ВолковаВикторияЭдуардовна.NewGameScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:КП_Ип1_22_ВолковаВикторияЭдуардовна"
+              mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewGameScreen"
+      Name="page" SizeChanged="page_SizeChanged">
+
+    <Page.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                         BorderBrush="{TemplateBinding BorderBrush}" 
+                         BorderThickness="{TemplateBinding BorderThickness}" 
+                         CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#4B0082"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="BorderBrush" Value="Wheat"/>
+            <Setter Property="FontSize" Value="36"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#AFEEEE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="RoundedTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="White" 
+                                BorderBrush="Wheat" 
+                                BorderThickness="2" 
+                                CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Foreground" Value="#4B0082"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+    </Page.Resources>
+    <Viewbox Stretch="UniformToFill">
+        <Grid x:Name="NewGame" Width="{Binding ActualWidth, ElementName=page}" Height="{Binding ActualHeight, ElementName=page}" SizeChanged="Grid_SizeChanged">
+            <Grid.Background>
+                <ImageBrush ImageSource="res/memoryBackground.jpg"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Row 0 -->
+            <Button Style="{StaticResource RoundedButtonStyle}" Grid.Column="0" Grid.Row="0" FontFamily="Arial" 
+                    x:Name="backButton" 
+                    Height="50" 
+                    Click="BackButtonClick" FontWeight="Bold" Margin="20,0,20,0">
+                Назад
+            </Button>
+            <TextBlock x:Name="tb1" Grid.Row="0" Grid.Column="1" 
+                   Width="400" 
+                   TextAlignment="Center"   
+                   HorizontalAlignment="Center" 
+                   FontFamily="Showcard Gothic" 
+                   FontSize="40" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,10,0,10" VerticalAlignment="Center">
+                Новая игра
+            </TextBlock>
+            <Button x:Name="bt"
+                Style="{StaticResource RoundedButtonStyle}" 
+                    Grid.Column="2" Grid.Row="0" 
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    Click="ShowPopupOffsetClicked">
+                <Image Source="Res/Palette.png" Width="92"></Image>
+            </Button>
+
+            <!-- Row 1 -->
+            <Label x:Name="label1" HorizontalAlignment="Center" Margin="0,80,0,0" Grid.Row="1" Foreground="White" FontSize="36" FontFamily="Arial" FontWeight="Bold">Игрок 1</Label>
+            <Label x:Name="label2" HorizontalAlignment="Center" Margin="0,80,0,0" Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="36" FontFamily="Arial" FontWeight="Bold">Уровень сложности</Label>
+            <Label x:Name="label3" HorizontalAlignment="Center" Margin="0,80,0,0" Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="36" FontFamily="Arial" FontWeight="Bold">Игрок 2</Label>
+            <TextBox Style="{StaticResource RoundedTextBoxStyle}" 
+                     Grid.Column="0" Grid.Row="1" 
+                     FontFamily="Arial" 
+                     x:Name="InputP1" 
+                     TextAlignment="Center"
+                     Height="45" VerticalAlignment="Center" Margin="20,0,20,0"/>
+            <ComboBox  Grid.Column="1" 
+                       Grid.Row="1" FontFamily="Arial" 
+                       FontSize="22" x:Name="Moeilijkheidsgraad" Margin="50,0,50,0" SelectedValuePath="Content" VerticalAlignment="Center" Height="50">
+                <ComboBoxItem FontSize="24" Content="Лёгкий"/>
+                <ComboBoxItem FontSize="24" IsSelected="True" Content="Нормальный"/>
+                <ComboBoxItem FontSize="24" Content="Сложный"/>
+            </ComboBox>
+            <TextBox 
+                Height="45"
+                Style="{StaticResource RoundedTextBoxStyle}" 
+                Grid.Column="2" Grid.Row="1" 
+                FontFamily="Arial" x:Name="InputP2"  TextAlignment="Center" VerticalAlignment="Center" Margin="20,0,20,0"/>
+
+            <Popup Grid.Column="1" Grid.Row="1" PopupAnimation="Fade" 
+                   AllowsTransparency="True" x:Name="StandardPopup" 
+                   Placement="Center" Width="400" Height="300">
+                <Border Background="#3C4E75" BorderBrush="Black" BorderThickness="2">
+                    <Grid Height="250" Width="350">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="Тема" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,10,0,0" FontSize="40" FontWeight="Bold" Foreground="White"/>
+                        <ComboBox Grid.Row="1" FontWeight="Bold" SelectionChanged="ComboBox_SelectionChanged" Loaded="ComboBox_Loaded" x:Name="themeInput" Margin="20,10,20,10" Height="90" SelectedIndex="0">
+                            <ComboBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Res\themes\theme_1\back.png" HorizontalAlignment="Right" Height="80" Width="80"/>
+                                    <TextBlock FontWeight="Bold" TextAlignment="Center" FontFamily="Arial" VerticalAlignment="Center" FontSize="30">Бравл Старс</TextBlock>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Res\themes\theme_2\back.png" Height="80" Width="80"/>
+                                    <TextBlock FontWeight="Bold" TextAlignment="Center" FontFamily="Arial" VerticalAlignment="Center" FontSize="30">Мемы</TextBlock>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image HorizontalAlignment="Right" Source="Res\themes\theme_3\back.png" Height="80" Width="80"/>
+                                    <TextBlock FontWeight="Bold" TextAlignment="Center" FontFamily="Arial" VerticalAlignment="Center" FontSize="30">Эмодзи</TextBlock>
+                                </StackPanel>
+                            </ComboBoxItem>
+                        </ComboBox>
+                        <Button Style="{StaticResource RoundedButtonStyle}"
+                                Grid.Row="2" FontFamily="Arial" Margin="10,10,10,10" Content="Закрыть" Click="ClosePopupClicked" FontWeight="Bold" FontSize="20"/>
+                    </Grid>
+                </Border>
+            </Popup>
+
+            <!-- Row 2 -->
+            <Button Style="{StaticResource RoundedButtonStyle}" 
+                    Grid.Column="1" Grid.Row="2" FontFamily="Arial" 
+                    Height="60" x:Name="StartButton" 
+                    Margin="50,0,50,0" Content="Старт" Click="startButton_Click" 
+                    FontWeight="Bold" VerticalAlignment="Center"/>
+        </Grid>
+    </Viewbox>
+</Page>

@@ -1,0 +1,75 @@
+﻿<Page x:Class="КП_Ип1_22_ВолковаВикторияЭдуардовна.GameRules"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:КП_Ип1_22_ВолковаВикторияЭдуардовна"
+              mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GameRules" SizeChanged="Page_SizeChanged">
+    <Page.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                             BorderBrush="{TemplateBinding BorderBrush}" 
+                             BorderThickness="{TemplateBinding BorderThickness}" 
+                             CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#4B0082"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="BorderBrush" Value="Wheat"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#AFEEEE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <!-- Левый столбец -->
+            <ColumnDefinition Width="8*"/>
+            <!-- Средний столбец (шире) -->
+            <!-- Правый столбец -->
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="res/memoryBackground.jpg"/>
+        </Grid.Background>
+        <ScrollViewer Grid.Column="1">
+            <StackPanel x:Name="rules">
+                <TextBlock Foreground="White" FontFamily="Showcard Gothic" FontSize="40" HorizontalAlignment="Center" Margin="0,25,0,0" FontWeight="Bold">ПРАВИЛА</TextBlock>
+                <TextBlock Foreground="White"  TextWrapping="Wrap" LineHeight="20" Margin="0,20,10,0" FontFamily="Arial" FontSize="36" TextAlignment="Justify" Padding="5,5,5,5">
+                В эту игру на запоминание играют два игрока.<LineBreak></LineBreak>
+                Оба игрока вписывают свое имя и выбирают уровень сложности <LineBreak></LineBreak>
+                Уровни сложности состоят из:<LineBreak></LineBreak>
+                - Лёгкий - это игровое поле размером 4 х 4 карты (16 карт)<LineBreak></LineBreak>
+                - Нормальный - это игровое поле 6 х 6 (36 карт)<LineBreak></LineBreak>
+                - Сложный - это игровое поле размером 8 х 8 (64 карты)<LineBreak></LineBreak>
+                Затем нажмите "Старт" и начните игру<LineBreak></LineBreak>
+                Игрок 1 начинает с того, что переворачивает 2 карты <LineBreak></LineBreak> 
+                Когда карты перевернуты, они остаются на некоторое время, чтобы вы могли запомнить<LineBreak></LineBreak>
+                Когда вы переворачиваете два одинаковых кубика, вы зарабатываете очки, и все равно настанет ваша очередь<LineBreak></LineBreak> 
+                Если это невозможно, карты переворачиваются и наступает очередь игрока 2.<LineBreak></LineBreak>                
+                После каждых 3 пар подряд ваши бонусные очки увеличиваются на 10, поэтому после 3 пар 10 дополнительных очков, при 6 парах - 20 очков, при 9 парах - 30 очков и так далее.<LineBreak></LineBreak>
+                После того, как найдена каждая пара, выигрывает игрок, набравший наибольшее количество очков на табло.
+                </TextBlock>
+
+            </StackPanel>
+        </ScrollViewer>
+        <Button Style="{StaticResource RoundedButtonStyle}" 
+                FontFamily="Arial" Margin="10,35,10,0" 
+                VerticalAlignment="Top" Click="returntoMenu_Button" 
+                FontWeight="Bold" FontSize="26" Height="42">
+            Назад
+        </Button>
+    </Grid>
+    </Page>
